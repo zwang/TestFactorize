@@ -12,6 +12,7 @@
 		FE5372941F2A9C1A00EA72A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5372921F2A9C1A00EA72A9 /* Main.storyboard */; };
 		FE5372961F2A9C1A00EA72A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5372951F2A9C1A00EA72A9 /* Assets.xcassets */; };
 		FE5372991F2A9C1A00EA72A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5372971F2A9C1A00EA72A9 /* LaunchScreen.storyboard */; };
+		FE5372A21F2A9CA400EA72A9 /* SwiftGMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5372A11F2A9CA400EA72A9 /* SwiftGMP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FE5372951F2A9C1A00EA72A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE5372981F2A9C1A00EA72A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE53729A1F2A9C1A00EA72A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE5372A11F2A9CA400EA72A9 /* SwiftGMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftGMP.framework; path = Carthage/Build/iOS/SwiftGMP.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE5372A21F2A9CA400EA72A9 /* SwiftGMP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				FE53728D1F2A9C1A00EA72A9 /* TestFactorize */,
 				FE53728C1F2A9C1A00EA72A9 /* Products */,
+				FE5372A01F2A9CA400EA72A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +68,14 @@
 			path = TestFactorize;
 			sourceTree = "<group>";
 		};
+		FE5372A01F2A9CA400EA72A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE5372A11F2A9CA400EA72A9 /* SwiftGMP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +86,7 @@
 				FE5372871F2A9C1A00EA72A9 /* Sources */,
 				FE5372881F2A9C1A00EA72A9 /* Frameworks */,
 				FE5372891F2A9C1A00EA72A9 /* Resources */,
+				FE5372A41F2A9CE000EA72A9 /* Copy Carthage Files */,
 			);
 			buildRules = (
 			);
@@ -131,6 +144,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FE5372A41F2A9CE000EA72A9 /* Copy Carthage Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftGMP.framework",
+			);
+			name = "Copy Carthage Files";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE5372871F2A9C1A00EA72A9 /* Sources */ = {
@@ -205,7 +236,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -249,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -262,9 +293,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 94BRK5FB6C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestFactorize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.platoapp.TestFactorize;
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/Carthage/Build/iOS/SwiftGMP.framework/Frameworks/GMPLib/iphoneos";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/Carthage/Build/iOS/SwiftGMP.framework/Frameworks/GMPLib/iphonesimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.platoapp.Plato.Stage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -275,9 +312,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 94BRK5FB6C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestFactorize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.platoapp.TestFactorize;
+				LIBRARY_SEARCH_PATHS = "";
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/Carthage/Build/iOS/SwiftGMP.framework/Frameworks/GMPLib/iphoneos";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/Carthage/Build/iOS/SwiftGMP.framework/Frameworks/GMPLib/iphonesimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.platoapp.Plato.Stage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,6 +346,7 @@
 				FE53729F1F2A9C1A00EA72A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
