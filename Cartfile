@@ -1,1 +1,1 @@
-git "git@git.playchat.net:playchat/SwiftGMP.git" "plato-ios"
+github "zwang/SwiftGMP" "noEmbededSwiftLib"

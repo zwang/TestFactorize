@@ -39,28 +39,7 @@ class ViewController: UIViewController {
 
     fileprivate func measureBackflushAndVerify(number: String) {
         let n = GMPInteger(number)
-        let factors = getFactors(numberBytes: GMPInteger.bytes(n))
-        assert(factors.count == 2, "Should always return two factors")
-        let factorsBigInteger = factors.map { GMPInteger($0) }
-        assert(factorsBigInteger[0] * factorsBigInteger[1] == n)
-    }
-
-    func getFactors(numberBytes: [UInt8], debug: Bool = false) -> [[UInt8]] {
-        let bigNum = GMPInteger(numberBytes)
-        let numberStr = bigNum.description
-        let start = CACurrentMediaTime()
-        var factors = bigNum.calculateFactors(debug: debug)
-        let end = CACurrentMediaTime()
-        if factors.count == 1 {
-            // Means the the produce only has one factor (it is the square of this factor), but the server wants two
-            // So compose an array based on these two
-            factors = [factors[0], factors[0]]
-        }
-
-        let factorsStr = factors.map({ GMPInteger($0).description }).joined(separator: ", ")
-        let msg = "Backflush: factorized \(numberStr) to (\(factorsStr)) in \(end - start) seconds."
-        print(msg)
-        return factors
+        print(n)
     }
 }
 
