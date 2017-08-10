@@ -228,17 +228,6 @@ typedef __mpf_struct *mpf_ptr;
 typedef const __mpq_struct *mpq_srcptr;
 typedef __mpq_struct *mpq_ptr;
 
-struct factors
-{
-    mpz_t         *p;
-    unsigned long *e;
-    long nfactors;
-};
-
-unsigned long getFactorsCount(struct factors* factors);
-struct factors factorized(mpz_t t, int flagVerbose);
-void factor_clear (struct factors *factors);
-
 
 #if __GMP_LIBGMP_DLL
 #ifdef __GMP_WITHIN_GMPXX

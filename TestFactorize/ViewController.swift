@@ -52,8 +52,8 @@ class ViewController: UIViewController {
     }
 
     fileprivate func measureBackflushAndVerify(number: String) -> String {
-        let n = GMPInteger(number).calculateFactors(debug: false)
-        return number + " = \(n.map({ GMPInteger($0).description }))"
+        let n = GMPInteger(number)
+        return n.description
     }
 }
 

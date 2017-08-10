@@ -241,23 +241,23 @@ extension GMPInteger {
         return Int(__gmpz_sizeinbase(&num.i, 2))
     }
 
-    public func calculateFactors(debug: Bool) -> [[UInt8]] {
-        var results: [GMPInteger] = []
-        var fs = factorized(&i, debug ? 1 : 0)
-        let count = getFactorsCount(&fs)
-        if count > 0 {
-            let p1 = GMPInteger(t: fs.p.pointee)
-            results.append(p1)
-
-            if count == 2 {
-                let p2 = GMPInteger(t: fs.p.successor().pointee)
-                results.append(p2)
-            }
-        }
-        let bytesResults = results.map({ GMPInteger.bytes($0) })
-        // factor_clear(&fs)
-        return bytesResults
-    }
+//    public func calculateFactors(debug: Bool) -> [[UInt8]] {
+//        var results: [GMPInteger] = []
+//        var fs = factorized(&i, debug ? 1 : 0)
+//        let count = getFactorsCount(&fs)
+//        if count > 0 {
+//            let p1 = GMPInteger(t: fs.p.pointee)
+//            results.append(p1)
+//
+//            if count == 2 {
+//                let p2 = GMPInteger(t: fs.p.successor().pointee)
+//                results.append(p2)
+//            }
+//        }
+//        let bytesResults = results.map({ GMPInteger.bytes($0) })
+//        // factor_clear(&fs)
+//        return bytesResults
+//    }
 }
 
 extension GMPInteger : Equatable, Comparable {

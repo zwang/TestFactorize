@@ -12,7 +12,6 @@
 		FE5372941F2A9C1A00EA72A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5372921F2A9C1A00EA72A9 /* Main.storyboard */; };
 		FE5372961F2A9C1A00EA72A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5372951F2A9C1A00EA72A9 /* Assets.xcassets */; };
 		FE5372991F2A9C1A00EA72A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5372971F2A9C1A00EA72A9 /* LaunchScreen.storyboard */; };
-		FE73776B1F3BDDCC002A855A /* factorize.c in Sources */ = {isa = PBXBuildFile; fileRef = FE7377631F3BDDCC002A855A /* factorize.c */; };
 		FE73776C1F3BDDCC002A855A /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7377651F3BDDCC002A855A /* libgmp.a */; };
 		FE73776D1F3BDDCC002A855A /* GMPDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7377691F3BDDCC002A855A /* GMPDouble.swift */; };
 		FE73776E1F3BDDCC002A855A /* GMPInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE73776A1F3BDDCC002A855A /* GMPInteger.swift */; };
@@ -27,10 +26,8 @@
 		FE5372951F2A9C1A00EA72A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE5372981F2A9C1A00EA72A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE53729A1F2A9C1A00EA72A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE7377631F3BDDCC002A855A /* factorize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = factorize.c; sourceTree = "<group>"; };
 		FE7377641F3BDDCC002A855A /* gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmp.h; sourceTree = "<group>"; };
 		FE7377651F3BDDCC002A855A /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
-		FE7377661F3BDDCC002A855A /* primes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = primes.h; sourceTree = "<group>"; };
 		FE7377691F3BDDCC002A855A /* GMPDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMPDouble.swift; sourceTree = "<group>"; };
 		FE73776A1F3BDDCC002A855A /* GMPInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMPInteger.swift; sourceTree = "<group>"; };
 		FE7377731F3BE522002A855A /* TestFactorize-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestFactorize-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -92,10 +89,8 @@
 		FE7377621F3BDDCC002A855A /* GMPLib */ = {
 			isa = PBXGroup;
 			children = (
-				FE7377631F3BDDCC002A855A /* factorize.c */,
 				FE7377641F3BDDCC002A855A /* gmp.h */,
 				FE7377651F3BDDCC002A855A /* libgmp.a */,
-				FE7377661F3BDDCC002A855A /* primes.h */,
 			);
 			path = GMPLib;
 			sourceTree = "<group>";
@@ -188,7 +183,6 @@
 				FE5372911F2A9C1A00EA72A9 /* ViewController.swift in Sources */,
 				FE73776E1F3BDDCC002A855A /* GMPInteger.swift in Sources */,
 				FE73776D1F3BDDCC002A855A /* GMPDouble.swift in Sources */,
-				FE73776B1F3BDDCC002A855A /* factorize.c in Sources */,
 				FE53728F1F2A9C1A00EA72A9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
