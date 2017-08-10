@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         testPrimeFactorize()
     }
 
@@ -23,8 +27,9 @@ class ViewController: UIViewController {
     }
 
     func testPrimeFactorize() {
-//        measureBackflushAndVerify(number: "1051473895475943185188722643")
-//        measureBackflushAndVerify(number: "1093208757760918931821458961")
+        let start = CACurrentMediaTime()
+        measureBackflushAndVerify(number: "1051473895475943185188722643")
+        measureBackflushAndVerify(number: "1093208757760918931821458961")
 //        measureBackflushAndVerify(number: "244461137395190299921769851")
 //        measureBackflushAndVerify(number: "226314805358035834565826361")
 //        measureBackflushAndVerify(number: "203349049209916202464236661")
@@ -34,16 +39,17 @@ class ViewController: UIViewController {
 //        measureBackflushAndVerify(number: "237831436598635880570130907")
 //        measureBackflushAndVerify(number: "261405767112385155541030303")
 //        measureBackflushAndVerify(number: "276936463777187195972531707")
-        measureBackflushAndVerify(number: "247771065637429073788327459")
+//        measureBackflushAndVerify(number: "247771065637429073788327459")
+        let stop = CACurrentMediaTime()
+        let alertCtr = UIAlertController(title: "Factorized", message: "Took \(stop - start) seconds", preferredStyle: .alert)
+        alertCtr.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertCtr, animated: true, completion: nil)
     }
 
     fileprivate func measureBackflushAndVerify(number: String) {
         let n = GMPInteger(number)
-        print(n.description)
-        let factors = n.calculateFactors(debug: true)
-        for f in factors {
-            print(GMPInteger(f).description)
-        }
+        let factors = n.calculateFactors(debug: false)
+        print(number + " = \(factors.map({ GMPInteger($0).description }))")
     }
 }
 
