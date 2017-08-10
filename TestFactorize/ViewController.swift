@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftGMP
 
 class ViewController: UIViewController {
 
@@ -38,8 +37,8 @@ class ViewController: UIViewController {
     }
 
     fileprivate func measureBackflushAndVerify(number: String) {
-        let n = GMPInteger(number)
-        print(n)
+        let n = GMPInteger(number).calculateFactors(debug: false)
+        print(n.map({ GMPInteger($0).description }))
     }
 }
 
